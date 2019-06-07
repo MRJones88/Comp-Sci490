@@ -1,0 +1,113 @@
+body{
+  font-family:'Nothing You Could Do', cursive;
+}
+* {
+  box-sizing: border-box;
+
+}
+.row::after {content: "";clear: both; display: table;}
+[class*="col-"] {float: left;padding: 15px;}
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;} 
+.col-8 {width: 66.66%;} 
+.col-9 {width: 75%;} 
+.col-10 {width: 83.33%;} 
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+html {
+font-family: "Lucida Sans", sans-serif; }
+.header {
+background-color: #9933cc;
+color: #ffffff;
+padding: 15px;
+}
+.menu ul{
+list-style-type: none;
+margin: 0;
+padding: 0;
+}
+.menu li {
+padding: 8px;
+margin-bottom: 7px;
+background-color: #33b5e5;
+color: #ffffff;box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.menu li:hover{
+background-color: #0099cc;
+}  
+.calc {
+  width: 100%;
+  height: 100%;
+  background: #394867;
+  margin-top:    5%;
+  margin-bottom: 5%;
+  margin-right:  5%;
+  margin-left:   5%;
+  padding: 0;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.52), 0 4px 10px rgba(0, 0, 0, 0.54);
+  *zoom: 1;
+}
+.calc #logo {
+  text-align: left;
+  margin: 10px;
+  font-weight: 600;
+  color: #eee;
+}
+.calc .screen {
+  width: 96%;
+  height: 13%;
+  background: #c6b0c5;
+  margin: 10px auto;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.32), 0 1px 2px rgba(0, 0, 0, 0.34);
+}
+.calc .screen p {
+  font-size: auto;
+  color: #555;
+  text-align: right;
+  margin-right: 10px;
+}
+.calc .screen #equation {
+  font-size: auto;
+}
+.calc .screen #number {
+  font-size: auto;
+}
+.calc .buttons {
+  width: 96%;
+  height: 400px;
+  margin: 10px auto;
+  border-radius: 4px;
+}
+.calc .buttons .button {
+  background: #2d5b73;
+  float: left;
+  margin: 6px 9px;
+  height: 10%;
+  width: 10%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.32), 0 1px 2px rgba(0, 0, 0, 0.34);
+  font-size: auto;
+  font-weight: 400;
+  color: #f9f9f9;
+  text-align: center;
+  padding-top: 8px;
+}
+.calc .buttons .button:hover {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 1px 1px rgba(0, 0, 0, 0.24);
+  cursor: pointer;
+}
+.calc .buttons .op {
+  margin-left: 25px;
+}
+.calc .buttons .clear {
+  float: none;
+  clear: both;
+  width: 95%;
+  margin: 0 auto;
+}
