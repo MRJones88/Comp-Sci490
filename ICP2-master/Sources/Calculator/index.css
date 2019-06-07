@@ -3,7 +3,8 @@ body{
 }
 * {
   box-sizing: border-box;
-
+  margin:0;
+  padding:0;
 }
 .row::after {content: "";clear: both; display: table;}
 [class*="col-"] {float: left;padding: 15px;}
@@ -41,8 +42,10 @@ color: #ffffff;box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24
 background-color: #0099cc;
 }  
 .calc {
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  max-width: 960px;
+  max-height: auto;
+
   background: #394867;
   margin-top:    5%;
   margin-bottom: 5%;
@@ -62,6 +65,7 @@ background-color: #0099cc;
 .calc .screen {
   width: 96%;
   height: 13%;
+  min-height: 50px;
   background: #c6b0c5;
   margin: 10px auto;
   border-radius: 4px;
@@ -89,8 +93,9 @@ background-color: #0099cc;
   background: #2d5b73;
   float: left;
   margin: 6px 9px;
-  height: 10%;
-  width: 10%;
+  height: auto;
+  min-width: 20px;
+  width: auto;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.32), 0 1px 2px rgba(0, 0, 0, 0.34);
   font-size: auto;
   font-weight: 400;
@@ -110,4 +115,9 @@ background-color: #0099cc;
   clear: both;
   width: 95%;
   margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
