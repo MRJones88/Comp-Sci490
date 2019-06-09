@@ -1,0 +1,54 @@
+.menu ul{
+	position: relative; 
+	float: left;
+
+}
+.menu li{
+	display:inline;
+}
+.tab{
+	margin-left: 4em;
+}
+.topBar{
+	float:center;
+	align-self: center;
+	position:relative;
+	min-width: 100%;
+	display:inline-block;
+	margin:0 auto;
+	background-color: grey;
+	opacity:.7;
+}
+.leftside{
+	width: 50%;
+	float:left;
+	margin: auto;
+	height: auto;
+	min-width: 20px;
+	width: auto;
+}
+.rightside{
+	width: 50%;
+	float:right;
+	margin: auto;
+	height: auto;
+	min-width: 20px;
+	width: auto;
+}
+.Main{
+	position: relative;
+	margin: 0 auto;
+	display: block;
+	justify-content: center;
+	align-content: center;
+	flex-wrap: wrap;
+
+}
+.footer{
+	background-color: grey;
+	opacity:.7;
+	left:0;
+	bottom:0;
+	width: 100%;
+	align-self: center;
+}
