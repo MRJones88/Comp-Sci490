@@ -1,7 +1,7 @@
 # ICP2
 Calculator and Javapage
 
-* [calculator](ICP2-master/Calculator/Sources/index.html)
+* [calculator](https://mrjones88.github.io/Comp-Sci490/ICP2-master/Calculator/Sources/index.html)
 
-* [Raw Page](ICP2-master/rwdtask/input.html)
+* [RawPage](https://mrjones88.github.io/Comp-Sci490/ICP2-master/rwdtask/input.html)
 
