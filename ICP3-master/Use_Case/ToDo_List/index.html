@@ -1,0 +1,33 @@
+<html>
+  <head>
+   <title>ToDo List</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+  </head>
+  <body>
+
+
+    <div id="container">
+      <h1>Get it done!</h1>
+      <ol id="items">
+
+      </ol>
+      <span class="total">
+        <li>
+          <label for="Menu"> Select status </label>
+          <select name="Menu" class='dropdown'>
+            <option>Pending</option>
+            <option>Done</option>
+            <option>Delete</option> 
+          </select> 
+          <span class='label pending'> Pending </span> </li>
+      </span>
+      <br/>
+      <input type="text" id="item"/>
+      <button id="add-to-list">Add to list</button>
+    </div>
+
+  </body>
+</html>
