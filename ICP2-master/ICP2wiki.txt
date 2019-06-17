@@ -1,0 +1,58 @@
+Welcome to the Comp-Sci490 In class Program One wiki Page!
+
+## layout
+This file is broken down into two directories each containing one part of the assignment ( RWD HTML and Calculator HTML ).
+each of those directories contains a source and Documents file.
+
+## Links
+* [Calculator](https://mrjones88.github.io/Comp-Sci490/ICP2-master/Calculator/Sources/index.html)
+
+* [RWD Task](https://mrjones88.github.io/Comp-Sci490/ICP2-master/rwdtask/input.html)
+
+***
+
+## Calculator
+* edited the calculators CSS file to change the color and font, as well as the look and feel of the calculator. 
+* also changed the measurements from definite pixels to percentages to allow a responsive reaction to window size.
+### screenshots
+***
+
+![Calculator Large](https://mrjones88.github.io/Comp-Sci490/ICP2-master/Calculator/Documents/calculatorLarge.PNG)
+
+_Calculator Large_
+***
+![Calculator Medium](https://mrjones88.github.io/Comp-Sci490/ICP2-master/Calculator/Documents/calculatormedium,.PNG)
+
+_Calculator Medium_
+***
+![Calculator Small](https://mrjones88.github.io/Comp-Sci490/ICP2-master/Calculator/Documents/calculatorsmall.PNG)
+
+_Calculator Small_
+***
+
+## RWD Task
+
+This task was to take some given source code and modify it to look alike the given pdf file and behave in a responsive way.
+
+1. To do this first, the header was made into two columns; one column at 20% for the picture and the other column at 80% for the text. 
+
+2. The Image in the middle needed to span the entire page so we used the style feature width: 100% to scale the image every time the window was resized 
+
+3. For the featured work section, we used three columns set at 33.33% of the screen. this gave us an even three column workspace. 
+
+4. the pictures in each column were separated from the text via a divide tag <"div"> 
+
+5. Lastly, the headings have an uppercase text-transform added to them.
+
+### screenshots
+***
+![RWD Task Large](https://mrjones88.github.io/Comp-Sci490/ICP2-master/rwdtask/Documents/RWDtaskLarge.PNG)
+_RWDtask Large_
+***
+![RWD Task Large](https://mrjones88.github.io/Comp-Sci490/ICP2-master/rwdtask/Documents/RWDtaskMedium.PNG)
+_RWDtask Medium_
+***
+![RWD Task Large](https://mrjones88.github.io/Comp-Sci490/ICP2-master/rwdtask/Documents/RWDtaskSmall.PNG)
+
+_RWDtask Small_
+***
