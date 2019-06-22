@@ -4,22 +4,26 @@
 angular.module('KnownledgeGraph', [])
     .controller('Ctrl', function ($scope, $http) {
 
-        $scope.getVenues = function () {
-            var placeEntered = document.getElementById("txt_placeName").value;
+        $scope.getResults = function () {
+            var searchQuery = document.getElementById("txt_searchQuery").value;
 
-        $scope.venueList = [];
+            $scope.resultList = [];
 
-            if (placeEntered != null && placeEntered != "") {
+            if (searchQuery != null && searchQuery != "") {
 
                 //This is the API that gives the list of venues based on the place and search query.
-                var handler = $http.get("https://kgsearch.googleapis.com/v1/entities:search?query="+ placeEntered +"&key=AIzaSyDddRpJCfqYBuisKshdaC3kMZAZQSvZxhI&limit=1&indent=True");
+                var handler = $http.get("https://kgsearch.googleapis.com/v1/entities:search?query="+ searchQuery +"&key=AIzaSyDddRpJCfqYBuisKshdaC3kMZAZQSvZxhI&limit=1&indent=True");
 
                 handler.success(function (data) {
                     if (data != null) {
-                        placeEntered = "";
-
+                        let name =  data.itemListElement[0].result.name;
+                        let image =  data.itemListElement[0].result.image.contentUrl;
+                        let description =  data.itemListElement[0].result.description;
+                        let url =  data.itemListElement[0].result.url;
+                        $scope.resultList.push({name: name, url: url, image: image, description: description});
                     }
                 })
+
                 handler.error(function (data) {
                     alert("There was some error processing your request. Please try after some time.");
                 });

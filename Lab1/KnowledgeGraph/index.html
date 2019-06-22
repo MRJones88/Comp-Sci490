@@ -18,19 +18,19 @@
 
     <div class="menu" id="div_SearchContainer">
         <h1 align="absolute" style="text-align: center; color: #1ab188">Knownledge Graph</h1>
-        <input type="text" id="txt_placeName" placeholder="Enter what you want to search for"
-               style="margin-left: 100px"/>
-        <button id="btn_getReview" ng-click="getVenues()">Get Venues</button>
+        <input type="text" id="txt_searchQuery" placeholder="Enter what you want to search for"
+               style="margin-left: 100px" value="taylor swift"/>
+        <button id="btn_getReview" ng-click="getResults()">Get Venues</button>
     </div>
-    <div id="div_VenueList">
-        <h2 style="text-align: center; color: #1ab188"> Results </h2>
+    <div ng-repeat="result in resultList">
+        <h2 style="text-align: center; color: #1ab188"> Top Five Picks From FourSquare Review API </h2>
         <ul>
-            <li ng-repeat="venue in venueList"
-                style="font-size: x-large; color: #5e5e5e; text-align: center; list-style: none">
-                <u>{{venue.name + "(" + venue.id + "): " + venue.location}}</u>
+            <li style="font-size: x-large; color: #5e5e5e; text-align: center; list-style: none">
+                <a href={{result.url}}>{{result.name}}</a><br/>
+                <img src={{result.image}}  alt="Taylor Swift"/><br/>
+                <p> {{result.description}}</p>
             </li>
         </ul>
-
     </div>
 
 </div>
