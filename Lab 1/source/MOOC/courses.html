@@ -1,0 +1,31 @@
+<html >
+  <head>
+	  <title>Home Page</title>
+	  <script src="js/angular.min.js"></script>
+	  <script src="js/app.js"></script>
+	  <style type="text/css">
+		  li {
+			  border: #1ab188 solid 1px;
+			  border-radius: 5px;
+			  padding-top: 20px;
+			  margin-bottom: 10px;
+			  background: #e8f4f1;
+		  }
+	  </style>
+  </head>
+
+  <body ng-app="app" ng-controller="courseController">
+
+	  <div id="course_list">
+		  <h2 style="text-align: center; color: #1ab188"> Courses Offered: </h2>
+		  <ul>
+			  <li ng-repeat="course in courseList"
+				  style="font-size: x-large; color: #5e5e5e; list-style: none">
+				  <u>{{course.Name}}</u>
+				  <p>{{course.Description}}</p>
+			  </li>
+		  </ul>
+	  </div>
+
+  </body>
+</html>

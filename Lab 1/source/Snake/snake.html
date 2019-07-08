@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html ng-app='Snake'>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+    <script src="snake.js"></script>
+    <title>Snake</title>
+    <style>
+        * {
+            font-family: "Lucida Grande", serif;
+        }
+
+        #gameContainer {
+            width: 440px;
+            height: auto;
+            margin: 25px auto;
+        }
+
+        .game-column {
+            border: 1px solid white;
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+        }
+
+        #startGame {
+            width: 100%;
+            padding: 15px 0;
+            margin-top: 5px;
+            text-align: center;
+            background-color: #4A545D;
+            color: white;
+        }
+
+        .header {
+            width: 100%;
+            height: 60px;
+            padding: 0;
+            margin-top: 5px;
+            text-align: center;
+            background-color: #4A545D;
+            color: white;
+        }
+
+        #startGame:hover {
+            color: #E26758;
+            cursor: pointer;
+        }
+
+        .scores {
+            font-size: 15px;
+            font-weight: bold;
+            padding-top: 10px;
+            padding-right: 25px;
+        }
+
+        .header-column {
+            height: 100%;
+            width: 45%;
+        }
+    </style>
+</head>
+
+<body ng-controller="snakeCtrl">
+
+<div id="gameContainer">
+    <div class="row header">
+        <div class="column header-column" style="float: left;">
+            <h3>Snake-AngJS</h3>
+        </div>
+        <div class="column header-column" style="float: right; text-align: right;">
+            <div class="scores">
+                <span class="score">{{"Score: " + score}}</span><br>
+                <span class="best-score" style="font-size: 12px;">{{"Best Score: " + bestScore}}</span>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top: 5px;">
+        <div class="row" style="height: 22px;" ng-repeat="column in board">
+            <div class="column game-column"
+                 ng-style="{'background-color': setStyling($parent.$index, $index)}"
+                 ng-repeat="row in column track by $index"
+            ></div>
+        </div>
+    </div>
+    <div id="startGame" ng-click="startGame()">Start Game</div>
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="KnownledgeGraph" class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Search</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="ResultsStyles.css">
+
+</head>
+
+<body class="body">
+
+<div ng-controller="Ctrl" style="top: 200px">
+
+    <div class="menu" id="div_SearchContainer">
+        <h1 align="absolute" style="text-align: center; color: #1ab188">Knownledge Graph</h1>
+        <input type="text" id="txt_searchQuery" placeholder="Enter what you want to search for"/>
+        <button id="btn_getReview" ng-click="getResults()">Search</button>
+    </div>
+    <div ng-repeat="result in resultList">
+        <ul>
+            <li style="font-size: x-large; color: #5e5e5e; text-align: center; list-style: none">
+                <a href={{result.url}} target="_blank">{{result.name}}</a><br/> <br/>
+                <img src={{result.image}}  alt="Taylor Swift"/><br/>
+                <p>{{result.description}}</p>
+                <p>{{result.detailed.articleBody}}</p>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+<script src="app.js"></script>
+
+</body>
+
+</html>

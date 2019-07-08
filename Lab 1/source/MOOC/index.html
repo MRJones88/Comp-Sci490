@@ -1,0 +1,252 @@
+<html >
+  <head>
+	  <title>MOOC</title>
+	  <script src="js/angular.min.js"></script>
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+	  <script src="js/app.js"></script>
+	  <style type="text/css">
+		  body {
+			  margin: 0;
+			  font-family: 'Roboto', sans-serif;
+			  font-weight: 500;
+		  }
+		  h1 {
+			  background: #4D4D4D;
+			  margin: 0;
+			  padding: 30px 0 20px 15px;
+			  color: white;
+		  }
+		  h2 {
+			  padding-top:20px;
+			  text-align: center;
+			  color: #1ab188;
+			  font-size: 25px;
+		  }
+		  h3 {
+			  color: #4D4D4D;
+			  margin-bottom: 10px;
+			  margin-top: 30px;
+		  }
+		  .list {
+			  padding: 0 20px;
+		  }
+		  .list li {
+			  border: #1ab188 solid 1px;
+			  border-radius: 5px;
+			  margin-bottom: 10px;
+			  color: gray(30%);
+			  background: #e8f4f1;
+			  font-size: x-large;
+			  color: #5e5e5e;
+			  list-style: none;
+			  padding: 20px 0 20px 25px;
+		  }
+		  .list li:hover {
+			  background: #1ab188;
+			  color: white;
+			  box-shadow: 2px 4px 15px 2px rgba(0, 0, 0, 0.2), 4px 8px 40px 5px rgba(0, 0, 0, 0.19);
+		  }
+		  .pre_reqs {
+			  padding: 0 20px;
+		  }
+		  .pre_reqs li {
+			  font-size: 16px;
+			  padding: 5px 0 5px 25px;
+		  }
+		  li:hover {
+			  cursor: pointer;
+			  text-decoration: underline;
+		  }
+		  .hidden {
+			  display: none;
+		  }
+		  .navBtn {
+			  border: none;
+			  background: none;
+			  font-size: 18px;
+			  color: #4D4D4D;
+			  font-family: 'Roboto', sans-serif;
+			  max-width: 40%;
+		   }
+		  .navBtn:hover, .tabBtn:hover {
+			  cursor: pointer;
+			  text-decoration: underline;
+		  }
+		  .tabBtn {
+			  border: none;
+			  background: none;
+			  font-size: 20px;
+			  color: white;
+			  font-family: 'Roboto', sans-serif;
+			  padding: 5px
+		  }
+		  #tabs {
+			  float: left;
+			  background: #1ab188;
+			  width: 100%;
+			  height: 34px;
+			  margin-bottom: 20px;
+		  }
+		  #navigation {
+			  margin: 10px 20px 0 20px;
+			  height: 30px;
+			  color: #4D4D4D;
+		  }
+		  .infoDiv {
+			  border: #1ab188 solid 1px;
+			  border-radius: 5px;
+			  margin: 10px 20px;
+			  color: gray(30%);
+			  background: #e8f4f1;
+			  font-size: x-large;
+			  color: #5e5e5e;
+			  list-style: none;
+			  padding: 20px;
+		  }
+		  #course_item {
+			  margin: 20px 50px;
+		  }
+		  p {
+			  color: #4D4D4D;
+		  }
+		  .btn {
+			  padding: 10px 20px;
+			  font-size: 18px;
+			  color: white;
+			  border-radius: 8px;
+			  border: #4D4D4D solid 1px;
+		  }
+		  .action {
+			  cursor: pointer;
+		  }
+		  .action:hover {
+			  box-shadow: 2px 4px 15px 2px rgba(0, 0, 0, 0.2), 4px 8px 40px 5px rgba(0, 0, 0, 0.19);
+		  }
+	  </style>
+  </head>
+
+  <body ng-app="app" ng-controller="Ctrl" ng-init="getSubjects()">
+
+  	<div>
+		<h1>MOOC Application</h1>
+	</div>
+
+	<div id="tabs">
+		<span style="margin-left: 10px; margin-right: 20px;">
+			<button class="tabBtn" ng-click="getOrders()">Orders</button>
+		</span>
+		<span>
+			<button class="tabBtn" ng-click="getSubjects()">Courses</button>
+		</span>
+	</div>
+
+  	<div id="navigation">
+		<span id="home_nav">
+			<button class="navBtn" ng-click="getSubjects()">Home</button>
+		</span>
+		<span id="subject_nav" class="hidden">
+			> <button class="navBtn">Subject</button>
+		</span>
+		<span id="focus_nav" class="hidden">
+			> <button class="navBtn">Focus Area</button>
+		</span>
+		<span id="course_nav" class="hidden">
+			> <button class="navBtn">Course</button>
+		</span>
+	</div>
+
+	<div id="orders" class="hidden" style="margin-top:40px">
+		<h2> User Profile </h2>
+		<table style="width: 100%;">
+			<tr>
+				<td style="width: 50%; padding-left: 30%">
+					<img style="height: 150px; width: 150px" src="images/bean.jpg" alt="Profile Picture">
+				</td>
+				<td style="width: 50%%; font-size: 20px">
+					Mr. Bean <br>
+					Status: Undergraduate <br>
+					Major: Computer Science
+				</td>
+			</tr>
+		</table>
+
+		<h2> Currently Enrolled Courses: </h2>
+		<ul class="list">
+			<li ng-repeat="v1 in orderLists[0]" ng-click="showCourse(v1.CourseID, v1.Name, true)">
+				{{v1.Name}}
+			</li>
+		</ul>
+
+		<h2> Completed Courses: </h2>
+		<ul class="list">
+			<li ng-repeat="courseItem in orderLists[1]" ng-click="showCourse(courseItem.CourseID, courseItem.Name, true)">
+				{{courseItem.Name}}
+			</li>
+		</ul>
+	</div>
+
+	  <div id="subject_list" style="margin-top:40px">
+		  <h2> Subjects Offered: </h2>
+
+		  <ul class="list">
+			  <li ng-repeat="subject in subjectList" ng-click="showSubject(subject.SubjectID, subject.Name)">
+				  {{subject.Name}}
+			  </li>
+		  </ul>
+
+		  <div id='no_subjects' class="infoDiv hidden">No subjects currently available</div>
+	  </div>
+
+	  <div id="focus_list" class="hidden" style="margin-top:40px">
+		  <h2> Focus Areas Offered: </h2>
+
+		  <div id='no_focus_areas' class="infoDiv hidden">No focus areas currently available</div>
+
+		  <ul class="list">
+			  <li ng-repeat="focusArea in focusList" ng-click="showFocus(focusArea.FocusID, focusArea.Name)">
+				  {{focusArea.Name}}
+			  </li>
+		  </ul>
+	  </div>
+
+	  <div id="course_list" class="hidden" style="margin-top:40px">
+		  <h2> Courses Offered: </h2>
+
+		  <div id='no_courses' class="infoDiv hidden">No courses currently available</div>
+
+		  <ul class="list">
+			  <li ng-repeat="courseItem in courseList" ng-click="showCourse(courseItem.CourseID, courseItem.Name, false)">
+				  {{courseItem.Name}}
+			  </li>
+		  </ul>
+	  </div>
+
+	  <div id="course_item" class="hidden" style="margin-top:40px">
+		  <h2>{{courseData.Name}}</h2>
+
+		  <h3>Description</h3>
+		  <p>{{courseData.Description}}</p>
+
+		  <h3>Pre-Requisites</h3>
+		  <ul class="pre_reqs">
+			  <li ng-repeat="preReq in courseData.preReqs" ng-click="showCourse(preReq.CourseID, preReq.Name)">
+				  <span style="color: rgba(178,34,34,0.9)">{{(preReq.CourseStatus === 'none') ? preReq.Name : ''}}</span>
+				  <span style="color: rgba(0,0,155,0.8);">{{(preReq.CourseStatus === 'enrolled') ? preReq.Name : ''}}</span>
+				  <span style="color: green">{{(preReq.CourseStatus === 'completed') ? preReq.Name : ''}}</span>
+			  </li>
+		  </ul>
+		  <br>
+
+		  <button class="btn action" id="enroll" style="background: #199acd;"
+				  ng-click="enrollInCourse(courseData.CourseID)">Enroll</button>
+
+		  <button class="btn action" id="drop" style="background: rgba(178,34,34,0.9);"
+				  ng-click="dropCourse(courseData.CourseID)">Drop</button>
+
+		  <button class="btn" id="complete" style="background: #1ab188;" disabled>Completed</button>
+		  <button class="btn" id="info" style="background: rgba(178,34,34,0.9);" disabled>
+			  You must complete all pre-requisites to be able to enroll in this course.</button>
+	  </div>
+  </body>
+</html>
